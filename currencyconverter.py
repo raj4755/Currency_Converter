@@ -9,13 +9,17 @@ for line in lines:
 
 
 # print(currencydict)
-amount = int(input("Enter amount\n"))
+try:
+    amount = int(input("Enter amount\n"))
+except Exception:
+    print("Please Enter Amount in Numbers")
 print("Enter the Country you want to convert amount\n")
 
 [print(item) for item in currencydict.keys()]
-
-country = input("\nEnter one of these\n")
-
+try:
+    country = input("\nEnter one of these\n")
+except Exception:
+    print("Please Enter Country name Correctly")
 print(f"{amount} INR is equal to {amount * float(currencydict[country])} {country}")
 
 print("Thanks for using my currency converter ")
